@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Add New Post
+{% endblock%}
+
+{% block content %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+  <div id="content">
+    <div class="row">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+                <form method="POST">
+                     {% csrf_token%}
+                    <label for="id_MaPhongBan">Mã Phòng Ban:</label>
+                    <input type="text"  name="MaPhongBan"  maxlength="20" class="form-control form-control-user" id="exampleFirstName" placeholder="Mã Phòng Ban"><br>
+                    <label for="id_TenPhongBan">Tên Phòng Ban:</label>
+                    <input type="text"  name="TenPhongBan" maxlength="200" required="" id="id_TenPhongBan" class="form-control form-control-user" placeholder="Tên Phòng Ban">
+                    <input type="submit" class="btn btn-primary btn-user btn-block"value="Thêm">
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

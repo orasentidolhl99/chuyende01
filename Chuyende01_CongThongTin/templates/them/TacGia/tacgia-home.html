@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for foo in tacgia %}
+		<div class="post_entry">
+			<h2 class="post_title">
+				<a href="{% url 'news:tacgia-detail' foo.pk%}"> {{foo.TenTacGia}}</a>
+			</h2>
+		</div>
+	{% endfor %}
+    <br>
+    {% for foo in linhvuc %}
+		<div class="post_entry">
+			<h2 class="post_title">
+				<a href="{% url 'news:linhvuc-detail' foo.pk%}"> {{foo.Name}}</a>
+			</h2>
+		</div>
+	{% endfor %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	{{image.MaLinhVuc}}
+{% endblock%}
+
+{%block content %}
+	
+	<div class="post_details">
+		<div class="post_info">
+			<div class="post_detail_meta">
+			<p>Author: {{image.Name}} | <a href="{% url 'news:image-edit' image.pk %}"> + Edit Post </a> | <a href="{% url 'news:image-delete' image.pk%}"> Remove Post</a></p>
+		</div>
+		</div>
+		<p class="post_detail_content">
+		</p>
+	</div>
+
+{% endblock%}

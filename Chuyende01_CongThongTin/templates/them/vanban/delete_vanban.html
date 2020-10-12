@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock%}
+
+{% block content %}
+	<div class="new_post">
+		<form method="POST">
+			{% csrf_token%}
+			<h2>Are You sure ? </h2>
+			<p>Delete : {{vanban.Name}}</p>
+			<div><button>Delete</button></div>
+            <br>
+            <div><button><a href="{% url 'news:vanban-detail' vanban.pk %}"></a>No</button></div>
+		</form>
+		
+	</div>
+{% endblock %}

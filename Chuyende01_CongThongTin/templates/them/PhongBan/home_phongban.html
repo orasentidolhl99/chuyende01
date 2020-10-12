@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load  static %}
+{% block content %}
+    <div class="card-body ">
+         <div class="row no-gutters align-items-center">
+             <div class="col mr-2">
+             {% for foo in phongban %}
+                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1 card bg-success text-white shadow" style="width: 300px">
+                     <a href="{% url 'news:phongban-detail' foo.pk%}">{{ foo.TenPhongBan }}</a>
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800 card bg-success text-white shadow " style="width: 300px">{{ foo.MaPhongBan }}</div>
+                {% endfor %}
+             </div>
+             <div class="col-xl-4 col-lg-5">
+                 <div class="card shadow mb-4">
+                     {% block Detail %}
+
+                     {% endblock %}
+                 </div>
+             </div>
+         </div>
+     </div>
+{% endblock %}
+
+

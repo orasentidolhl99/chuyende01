@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	{{phongban.MaPhongBan}}
+{% endblock%}
+
+{%block content %}
+	
+	<div class="post_details">
+		<div class="post_info">
+			<div class="post_detail_meta">
+			<p>Author: {{phongban.TenPhongBan}} | <a href="{% url 'news:phongban-edit' phongban.pk %}"> + Edit Post </a> | <a href="{% url 'news:phongban-delete' phongban.pk%}"> Remove Post</a></p>
+		</div>
+		</div>
+	</div>
+{% endblock%}
